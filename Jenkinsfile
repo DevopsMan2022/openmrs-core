@@ -5,18 +5,17 @@ pipeline{
     }
 
     stages{
-        stage(source code){
-            steps{
-                git url: 'https://github.com/DevopsMan2022/openmrs-core.git',
+        stage('Source Code') {
+            steps {
+                git url: 'https://github.com/DevopsMan2022/openmrs-core.git', 
                 branch: 'branch_develop1'
             }
-        }
-        stage(Build the code){
+        stage('Build the code'){
             steps{
                 sh script: "mvan clean package"
             }
         }
-        stage(Publish test results){
+        stage('Publish test results'){
             steps{
                 junit testResults: 'target/surefire-reports/*.xml'
             }
