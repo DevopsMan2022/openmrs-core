@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage(source code){
             steps{
-                git url: 'https://github.com/DevopsMan2022/openmrs-core.git'
+                git url: 'https://github.com/DevopsMan2022/openmrs-core.git',
                 branch: 'branch_develop1'
             }
         }
